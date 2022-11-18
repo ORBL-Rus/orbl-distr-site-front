@@ -9,8 +9,11 @@
   <link rel="stylesheet" href="/assets/index.583b0fa5.css">
 </head>
 <body>
+<div id="test"></div>
 <div id="app"></div>
 <script>
+    const testDiv = document.querySelector("#test")
+
     function getFirstBrowserLanguage () {
         const nav = window.navigator
         const browserLanguagePropertyKeys = ['language', 'browserLanguage', 'systemLanguage', 'userLanguage']
@@ -42,6 +45,7 @@
     }
 
     console.log('lang:', browserLanguage)
+    testDiv.textContent = browserLanguage ? browserLanguage : 'null'
 </script>
 
 </body>
