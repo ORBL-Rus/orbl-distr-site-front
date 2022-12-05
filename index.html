@@ -5,41 +5,16 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ORBL</title>
-    <script type="module" crossorigin src="/assets/index.754b087a.js"></script>
-    <link rel="stylesheet" href="/assets/index.d9a1d26d.css">
+    <script type="module" crossorigin src="/assets/index.7428ce67.js"></script>
+    <link rel="stylesheet" href="/assets/index.1dabd8f0.css">
   </head>
   <body>
     <div id="app"></div>
     <script>
-    function getFirstBrowserLanguage () {
-        const nav = window.navigator
-        const browserLanguagePropertyKeys = ['language', 'browserLanguage', 'systemLanguage', 'userLanguage']
-        let language
-
-        if (Array.isArray(nav.languages)) {
-            for (let i = 0; i < nav.languages.length; i++) {
-                language = nav.languages[i]
-                if (language && language.length) {
-                    return language
-                }
-            }
-        }
-
-        for (let i = 0; i < browserLanguagePropertyKeys.length; i++) {
-            language = nav[browserLanguagePropertyKeys[i]]
-            if (language && language.length) {
-                return language
-            }
-        }
-
-        return null
-    }
-
-    const browserLanguage = getFirstBrowserLanguage()
-
-    if (browserLanguage && !browserLanguage.includes('ru')) {
-        window.location.href = 'https://en.orbl.io'
-    }
+      if(navigator.language!=='ru-RU' && navigator.language!=='ru' ){
+        window.location.href = 'http://en.orbl.io'
+      }
     </script>
+    
   </body>
 </html>
