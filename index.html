@@ -1,46 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" href="/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>ORBL</title>
-    <script type="module" crossorigin src="/assets/index.7428ce67.js"></script>
-    <link rel="stylesheet" href="/assets/index.1dabd8f0.css">
-  </head>
-  <body>
-    <div id="app"></div>
-    <script>
-      function getFirstBrowserLanguage () {
-          const nav = window.navigator
-          const browserLanguagePropertyKeys = ['language', 'browserLanguage', 'systemLanguage', 'userLanguage']
-          let language
-  
-          if (Array.isArray(nav.languages)) {
-              for (let i = 0; i < nav.languages.length; i++) {
-                  language = nav.languages[i]
-                  if (language && language.length) {
-                      return language
-                  }
-              }
-          }
-  
-          for (let i = 0; i < browserLanguagePropertyKeys.length; i++) {
-              language = nav[browserLanguagePropertyKeys[i]]
-              if (language && language.length) {
-                  return language
-              }
-          }
-  
-          return null
-      }
-  
-      const browserLanguage = getFirstBrowserLanguage()
-  
-      if (browserLanguage && !browserLanguage.includes('ru')) {
-          window.location.href = 'https://en.orbl.io'
-      }
-  </script>
-    
-  </body>
+  <script type="module" crossorigin src="/assets/index.b42e0f64.js"></script>
+  <link rel="stylesheet" href="/assets/index.583b0fa5.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+    function getFirstBrowserLanguage () {
+        const nav = window.navigator
+        const browserLanguagePropertyKeys = ['language', 'browserLanguage', 'systemLanguage', 'userLanguage']
+        let language
+
+        if (Array.isArray(nav.languages)) {
+            for (let i = 0; i < nav.languages.length; i++) {
+                language = nav.languages[i]
+                if (language && language.length) {
+                    return language
+                }
+            }
+        }
+
+        for (let i = 0; i < browserLanguagePropertyKeys.length; i++) {
+            language = nav[browserLanguagePropertyKeys[i]]
+            if (language && language.length) {
+                return language
+            }
+        }
+
+        return null
+    }
+
+    const browserLanguage = getFirstBrowserLanguage()
+    let result
+    (async()=>{
+        let test = null
+        result = await fetch('https://ipinfo.io?token=971e288d3af019').then((data)=>{
+        return data.json().then(e=>{
+            test= e
+            console.log(e,test,'ee')
+            return e
+        })
+        // return data.json()
+    })
+    // console.log(result.country,test,'hi')
+    if(document.referrer==='https://orbl.ru'){
+        return 
+    }
+    if(result.country!=='RU'){
+        return window.location.href = 'https://en.orbl.io'
+    }
+    if(result.country==='RU'){
+        return window.location.href = 'https://orbl.io'
+    }
+    if (browserLanguage && !browserLanguage.includes('ru')) {
+        window.location.href = 'https://en.orbl.io'
+    }
+
+
+
+    })()
+
+</script>
+
+</body>
 </html>
