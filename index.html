@@ -5,8 +5,8 @@
     <link rel="icon" href="/favicon.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>ORBL</title>
-  <script type="module" crossorigin src="/assets/index.b42e0f64.js"></script>
-  <link rel="stylesheet" href="/assets/index.583b0fa5.css">
+  <script type="module" crossorigin src="/assets/index.7428ce67.js"></script>
+  <link rel="stylesheet" href="/assets/index.1dabd8f0.css">
 </head>
 <body>
 <div id="app"></div>
@@ -51,10 +51,10 @@
     if(document.referrer==='https://orbl.ru'){
         return 
     }
-    if(result.country!=='RU'){
+    if(result.country!=='RU' && window.location.href!=='https://en.orbl.io'){
         return window.location.href = 'https://en.orbl.io'
     }
-    if(result.country==='RU'){
+    if(result.country==='RU' && window.location.href!=='https://orbl.io'){
         return window.location.href = 'https://orbl.io'
     }
     if (browserLanguage && !browserLanguage.includes('ru')) {
