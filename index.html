@@ -47,10 +47,13 @@
         })
         // return data.json()
     })
+    if(window.location.href.indexOf('stop')>=0){
+        return 
+    }
     // console.log(result.country,test,'hi')
     if(window.location.href === 'https://orbl.ru/'){
         console.log('0')
-        return window.location.href = 'https://orbl.io/'
+        return window.location.href = 'https://orbl.io/?stop'
     }
     // if(window.location.href === 'https://orbl.io/' && result.country==='RU'){
     //     console.log('1')
