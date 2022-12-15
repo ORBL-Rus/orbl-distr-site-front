@@ -48,9 +48,13 @@
         // return data.json()
     })
     // console.log(result.country,test,'hi')
-    if(document.referrer==='https://orbl.ru/'){
+    if(document.referrer==='https://orbl.ru/' || window.location.href === 'https://orbl.ru'){
+        console.log('0')
+        return
+    }
+    if(window.location.href = 'https://orbl.io/'){
         console.log('1')
-        return 
+        return
     }
     if(result.country!=='RU' && window.location.href!=='https://en.orbl.io/'){
         console.log('2')
@@ -62,8 +66,11 @@
     }
     if (browserLanguage && !browserLanguage.includes('ru')) {
         console.log('4')
-        return window.location.href = 'https://en.orbl.io/'
+        window.location.href = 'https://en.orbl.io/'
     }
+
+
+
     })()
 
 </script>
