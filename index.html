@@ -49,20 +49,20 @@
         })
         // return data.json()
     })
-    if(window.location.href.indexOf('stop')>=0){
-        return 
-    }
+    // if(window.location.href.indexOf('stop')>=0){
+    //     return 
+    // }
     console.log(window.location.href,'')
     // console.log(result.country,test,'hi')
-    if(window.location.href === 'https://orbl.ru/'){
+    if(window.location.href === 'https://orbl.io/?ru'){
         console.log('0')
-        return window.location.href = 'https://orbl.io/?stop'
+        return
     }
     // if(window.location.href === 'https://orbl.io/' && result.country==='RU'){
     //     console.log('1')
     //     return window.location.href = 'https://orbl.ru/'
     // }
-    if(result.country!=='RU' && window.location.href!=='https://en.orbl.io/' && window.location.href!=='https://orbl.ru/' && document.referrer!=='https://orbl.ru/'){
+    if(result.country!=='RU' && window.location.href!=='https://en.orbl.io/' && window.location.href!=='https://orbl.ru/' && document.referrer!=='https://orbl.ru/' && window.location.href!=='https://orbl.io/?ru'&& document.referrer!=='https://orbl.io/?ru' ){
         console.log('2')
         return window.location.href = 'https://en.orbl.io/'
     }
