@@ -11,6 +11,8 @@
 <body>
 <div id="app"></div>
 <script>
+    console.log(window.location.href,'')
+
     function getFirstBrowserLanguage () {
         const nav = window.navigator
         const browserLanguagePropertyKeys = ['language', 'browserLanguage', 'systemLanguage', 'userLanguage']
@@ -47,10 +49,10 @@
         })
         // return data.json()
     })
-    console.log(window.location.href)
     if(window.location.href.indexOf('stop')>=0){
         return 
     }
+    console.log(window.location.href,'')
     // console.log(result.country,test,'hi')
     if(window.location.href === 'https://orbl.ru/'){
         console.log('0')
