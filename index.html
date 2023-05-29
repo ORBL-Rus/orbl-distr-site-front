@@ -5,7 +5,7 @@
     <link rel="icon" href="/favicon.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>ORBL</title>
-  <script type="module" crossorigin src="/assets/index.38852bf2.js"></script>
+  <script type="module" crossorigin src="/assets/index.f948e019.js"></script>
   <link rel="stylesheet" href="/assets/index.4847653d.css">
 </head>
 <body>
@@ -44,25 +44,17 @@
         result = await fetch('https://ipinfo.io?token=971e288d3af019').then((data)=>{
         return data.json().then(e=>{
             test= e
-            console.log(e,test,'ee')
             return e
         })
-        // return data.json()
     })
-    // if(window.location.href.indexOf('stop')>=0){
-    //     return 
-    // }
-    console.log(window.location.href,'')
-    // console.log(result.country,test,'hi')
+
     if(window.location.href === 'https://orbl.io/?ru'){
         console.log('0')
         return
     }
-    // if(window.location.href === 'https://orbl.io/' && result.country==='RU'){
-    //     console.log('1')
-    //     return window.location.href = 'https://orbl.ru/'
-    // }
-    if(result.country!=='RU' && window.location.href!=='https://en.orbl.io/' && window.location.href!=='https://orbl.ru/' && document.referrer!=='https://orbl.ru/' && window.location.href!=='https://orbl.io/?ru'&& document.referrer!=='https://orbl.io/?ru' ){
+
+    if(result.country!=='RU' && window.location.href!=='https://en.orbl.io/' && window.location.href!=='https://orbl.ru/'
+    && document.referrer!=='https://orbl.ru/' && window.location.href!=='https://orbl.io/?ru' && document.referrer!=='https://orbl.io/?ru' ){
         console.log('2')
         return window.location.href = 'https://en.orbl.io/'
     }
@@ -74,8 +66,12 @@
         console.log('4')
         return window.location.href = 'https://en.orbl.io/'
     }
+    if(window.location.hash==='#rec77328972%23!/tab/77373317-7'){
+        console.log(window.location.host + '/' + window.location.hash.slice(1,'#rec/77328972%23!/tab/77373317-7'.length),'hi')
+        window.location.pathname='/' + window.location.hash.slice(1,'#rec/77328972%23!/tab/77373317-7'.length)
+        window.location.hash=''
+    }
     })()
-
 </script>
 
 </body>
