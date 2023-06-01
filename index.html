@@ -4,6 +4,7 @@
     <meta charset="UTF-8"/>
     <link rel="icon" href="/favicon.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Security-Policy" content="font-src 'self' data:; img-src 'self' data:; default-src 'self'">
     <title>ORBL</title>
   <script type="module" crossorigin src="/assets/index.9c3ca545.js"></script>
   <link rel="stylesheet" href="/assets/index.1c34ee74.css">
@@ -53,19 +54,19 @@
         return
     }
 
-    if(result.country!=='RU' && window.location.href!=='https://en.orbl.io/' && window.location.href!=='https://orbl.ru/'
-    && document.referrer!=='https://orbl.ru/' && window.location.href!=='https://orbl.io/?ru' && document.referrer!=='https://orbl.io/?ru' ){
-        console.log('2')
-        return window.location.href = 'https://en.orbl.io/'
-    }
-    if(result.country==='RU' && window.location.href==='https://orbl.io/'){
-        console.log('3')
-        return
-    }
-    if (browserLanguage && !browserLanguage.includes('ru')) {
-        console.log('4')
-        return window.location.href = 'https://en.orbl.io/'
-    }
+    // if(result.country!=='RU' && window.location.href!=='https://en.orbl.io/' && window.location.href!=='https://orbl.ru/'
+    // && document.referrer!=='https://orbl.ru/' && window.location.href!=='https://orbl.io/?ru' && document.referrer!=='https://orbl.io/?ru' ){
+    //     console.log('2')
+    //     return window.location.href = 'https://en.orbl.io/'
+    // }
+    // if(result.country==='RU' && window.location.href==='https://orbl.io/'){
+    //     console.log('3')
+    //     return
+    // }
+    // if (browserLanguage && !browserLanguage.includes('ru')) {
+    //     console.log('4')
+    //     return window.location.href = 'https://en.orbl.io/'
+    // }
     })()
     if(window.location.hash==='#rec77328972%23!/tab/77373317-7'){
         console.log(1)
