@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" href="/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ORBL</title>
+  <script type="module" crossorigin src="/assets/index.f9c04b94.js"></script>
+  <link rel="stylesheet" href="/assets/index.1c34ee74.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+    console.log(window.location.href,'')
+
+    function getFirstBrowserLanguage () {
+        const nav = window.navigator
+        const browserLanguagePropertyKeys = ['language', 'browserLanguage', 'systemLanguage', 'userLanguage']
+        let language
+
+        if (Array.isArray(nav.languages)) {
+            for (let i = 0; i < nav.languages.length; i++) {
+                language = nav.languages[i]
+                if (language && language.length) {
+                    return language
+                }
+            }
+        }
+
+        for (let i = 0; i < browserLanguagePropertyKeys.length; i++) {
+            language = nav[browserLanguagePropertyKeys[i]]
+            if (language && language.length) {
+                return language
+            }
+        }
+
+        return null
+    }
+
+    const browserLanguage = getFirstBrowserLanguage()
+    let result
+    (async()=>{
+        let test = null
+        result = await fetch('https://ipinfo.io?token=971e288d3af019').then((data)=>{
+        return data.json().then(e=>{
+            test= e
+            return e
+        })
+    })
+
+    if(window.location.href === 'https://orbl.io/?ru'){
+        console.log('0')
+        return
+    }
+
+    // if(result.country!=='RU' && window.location.href!=='https://en.orbl.io/' && window.location.href!=='https://orbl.ru/'
+    // && document.referrer!=='https://orbl.ru/' && window.location.href!=='https://orbl.io/?ru' && document.referrer!=='https://orbl.io/?ru' ){
+    //     console.log('2')
+    //     return window.location.href = 'https://en.orbl.io/'
+    // }
+    // if(result.country==='RU' && window.location.href==='https://orbl.io/'){
+    //     console.log('3')
+    //     return
+    // }
+    // if (browserLanguage && !browserLanguage.includes('ru')) {
+    //     console.log('4')
+    //     return window.location.href = 'https://en.orbl.io/'
+    // }
+    })()
+    if(window.location.hash==='#rec77328972%23!/tab/77373317-7'){
+        console.log('hi')
+        window.open('https://orbl.ru/rurec77328972/tab/77373317-7','_self')
+        // console.log(window.location.host + '/' + window.location.hash.slice(1,'#rec/77328972%23!/tab/77373317-7'.length),'hi')
+        // window.location.pathname='/configurator/test'
+        // window.location.hash=''
+    }
+</script>
+
+</body>
+</html>
