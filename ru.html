@@ -13,11 +13,15 @@
 <body>
   <div id="app"></div>
   <script>
-    if (window.location.hash === '#rec77328972%23!/tab/77373317-7') {
-      window.open('https://orbl.ru/rurec77328972/tab/77373317-7', '_self')
+    function redirect() {
+      if (window.location.hash === '#rec77328972%23!/tab/77373317-7') {
+        return window.open('https://orbl.ru/rurec77328972/tab/77373317-7', '_self')
+      }
+
+      return window.open('https://orbl.ru/', '_self')
     }
 
-    window.location.href = 'https://orbl.ru/'
+    redirect()
   </script>
 
 </body>
