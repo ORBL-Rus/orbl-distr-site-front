@@ -46,12 +46,12 @@
         }
 
         async function redirect() {
-            if (window.location.href === 'https://orbl.io/?ru' || window.location.href === 'https://orbl.io/ru') {
-                return window.location.href = 'https://orbl.ru/'
-            }
-
             if (window.location.hash === '#rec77328972%23!/tab/77373317-7') {
                 window.open('https://orbl.ru/rurec77328972/tab/77373317-7', '_self')
+            }
+
+            if (window.location.href === 'https://orbl.io/?ru' || window.location.href === 'https://orbl.io/ru') {
+                return window.location.href = 'https://orbl.ru/'
             }
         }
 
