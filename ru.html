@@ -11,50 +11,7 @@
 <body>
 <div id="app"></div>
 <script>
-    console.log(window.location.href)
-        function getFirstBrowserLanguage() {
-            const nav = window.navigator
-            const browserLanguagePropertyKeys = ['language', 'browserLanguage', 'systemLanguage', 'userLanguage']
-            let language
-
-            if (Array.isArray(nav.languages)) {
-                for (let i = 0; i < nav.languages.length; i++) {
-                    language = nav.languages[i]
-                    if (language && language.length) {
-                        return language
-                    }
-                }
-            }
-
-            for (let i = 0; i < browserLanguagePropertyKeys.length; i++) {
-                language = nav[browserLanguagePropertyKeys[i]]
-                if (language && language.length) {
-                    return language
-                }
-            }
-
-            return null
-        }
-
-        async function getCurrentCountry() {
-            return await fetch('https://ipinfo.io?token=971e288d3af019').then((data) => {
-                return data.json().then(result => {
-                    return result
-                })
-            })
-        }
-
-        async function redirect() {
-            if (window.location.href === 'https://orbl.io/?ru' || window.location.href === 'https://orbl.io/ru') {
-                return window.location.href = 'https://orbl.ru/'
-            }
-
-            if (window.location.hash === '#rec77328972%23!/tab/77373317-7') {
-                window.open('https://orbl.ru/rurec77328972/tab/77373317-7', '_self')
-            }
-        }
-
-        redirect()
+    window.location.href = 'https://orbl.ru/'
 </script>
 
 </body>
